@@ -1,0 +1,16 @@
+h1{
+    position: absolute;
+    top: 200px;
+    font-size: 170px;
+    color:#fbda55;
+    font-family: 'Allura', cursive;
+  }
+
+p{
+    position: absolute;
+    top: 350px;
+    font-size: 30px;
+    word-spacing: 10px;
+    color:#17c095;
+    font-family: 'Allura', cursive;
+  }

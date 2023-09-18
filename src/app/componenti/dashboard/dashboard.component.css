@@ -1,0 +1,30 @@
+.wrapper{
+    background: url(/assets/media/passerella.jpg);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+  }
+  
+  button{
+    position: absolute;
+    top: 300px;
+  }
+  
+  h1{
+    position: absolute;
+    top: 200px;
+    font-size: 170px;
+    color: whitesmoke;
+    font-family: 'Allura', cursive;
+  }
+
+  .icons{
+    color:black;
+    transform: scale(3.5);
+    position: absolute;
+    top: 580px;
+  }
+
+  

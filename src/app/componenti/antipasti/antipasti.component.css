@@ -1,0 +1,15 @@
+.example-card {
+    width: 240px;
+    height: 380px;
+}
+
+.buttonAdd{ 
+    background-color: green;
+    color: yellow;
+}
+
+.buttonA{
+    position:relative;
+    display: flex;
+    justify-content:flex-end;
+}

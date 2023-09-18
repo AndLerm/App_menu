@@ -1,0 +1,32 @@
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(/assets/media/base.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    }
+
+.cstDrawer{
+  width: 250px;
+}
+
+.buttonList{
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+}
+
+.buttonStart{
+  font-family: 'Allura', cursive;
+  font-size: 30px;
+
+}
+
+.active{
+    background-color: #f7df3d;
+  }
+

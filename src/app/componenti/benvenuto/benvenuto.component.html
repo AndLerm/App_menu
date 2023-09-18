@@ -1,0 +1,32 @@
+<mat-drawer-container class="example-container" autosize>
+    
+    
+    <mat-drawer #drawer mode="side" class="cstDrawer" [opened]="isDrawerOpen">
+        <mat-list role="list">
+            <mat-list-item role="listitem" routerLink="start" routerLinkActive="active">Benvenuto</mat-list-item>
+            <mat-list-item role="listitem" routerLink="antipasti" routerLinkActive="active">Antipasti</mat-list-item>
+            <mat-list-item role="listitem" routerLink="primipiatti" routerLinkActive="active">Primi</mat-list-item>
+            <mat-list-item role="listitem" routerLink="">Secondi</mat-list-item>   
+        </mat-list>
+
+        <mat-list class="buttonList">
+            <mat-icon class="mx-4" routerLink="antipasti">arrow_upward</mat-icon>
+            <mat-icon class="mx-4" routerLink="">exit_to_app</mat-icon>
+        </mat-list>
+    </mat-drawer>
+    
+    
+    
+    <mat-drawer-content>
+
+        <router-outlet>
+            <button class="buttonStart" type="button" mat-button (click)="toggleDrawer()">
+                {{ isDrawerOpen ? 'Chiudi il nostro menù' : 'Apri il nostro menù' }}
+              </button>
+
+        </router-outlet>
+
+    </mat-drawer-content>
+
+</mat-drawer-container>
+
