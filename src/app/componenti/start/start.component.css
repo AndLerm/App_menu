@@ -1,16 +1,33 @@
 h1{
-    position: absolute;
-    top: 200px;
     font-size: 170px;
     color:#fbda55;
     font-family: 'Allura', cursive;
   }
 
 p{
-    position: absolute;
-    top: 350px;
-    font-size: 30px;
+    margin-top: 50px;
+    font-size: 35px;
     word-spacing: 10px;
-    color:#17c095;
+    letter-spacing: 5px;
+    color:#329807;
     font-family: 'Allura', cursive;
+    font-weight: bold;
+  }
+
+  mat-icon{
+    transform: scale(3.5);
+    margin-bottom: 100px;
+  }
+
+  .containerTitle{
+    height: 700px;
+  }
+
+  h2{
+    font-size: 35px;
+    word-spacing: 10px;
+    letter-spacing: 5px;
+    color:#329807;
+    font-family: 'Allura', cursive;
+    font-weight: bold;
   }

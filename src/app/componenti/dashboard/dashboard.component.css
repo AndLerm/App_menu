@@ -1,5 +1,5 @@
 .wrapper{
-    background: url(/assets/media/passerella.jpg);
+    /* background: url(/assets/media/passerella.jpg); */
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -25,6 +25,15 @@
     transform: scale(3.5);
     position: absolute;
     top: 580px;
+  }
+
+  .buttonLogin{
+    position: absolute;
+    right: 50px;
+    top: 30px;
+    display: flex;
+    align-items: center;
+    font-size: large;
   }
 
   
