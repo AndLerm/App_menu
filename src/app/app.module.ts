@@ -1,17 +1,23 @@
+import {Component} from '@angular/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
+
 import {MatSidenavModule} from '@angular/material/sidenav';  
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card'; 
 import {MatProgressBarModule} from '@angular/material/progress-bar'; 
 import {TextFieldModule} from '@angular/cdk/text-field'; 
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule} from '@angular/forms';
+
 
 
 import { DashboardComponent } from './componenti/dashboard/dashboard.component';
@@ -20,6 +26,7 @@ import { AntipastiComponent } from './componenti/antipasti/antipasti.component';
 import { PrimipiattiComponent } from './componenti/primipiatti/primipiatti.component';
 import { StartComponent } from './componenti/start/start.component'; 
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './componenti/login/login.component';
 
 
 @NgModule({
@@ -29,7 +36,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BenvenutoComponent,
     AntipastiComponent,
     PrimipiattiComponent,
-    StartComponent
+    StartComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +51,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatListModule,
     MatCardModule,
     MatProgressBarModule,
-    TextFieldModule
+    TextFieldModule,
+    MatInputModule,
+    FormsModule,
+    HttpClientModule
+
     
   ],
   providers: [],

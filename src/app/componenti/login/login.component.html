@@ -1,0 +1,11 @@
+<form class="example-form" #formLogin="ngForm" (ngSubmit)="onSubmit(formLogin)" >
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="example@gmail.com" name="email" type="email" ngModel required email>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Password" type="password" name="password" ngModel required>
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary" [disabled]="!formLogin.valid">Invia</button>
+</form>

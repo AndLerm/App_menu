@@ -6,16 +6,19 @@ import { BenvenutoComponent } from './componenti/benvenuto/benvenuto.component';
 import { AntipastiComponent } from './componenti/antipasti/antipasti.component';
 import { PrimipiattiComponent } from './componenti/primipiatti/primipiatti.component';
 import { StartComponent } from './componenti/start/start.component';
+import { LoginComponent } from './componenti/login/login.component';
 
 const routes: Routes = [
 
   {path: '', component: DashboardComponent},
+  {path: 'login', component: LoginComponent},
 
     {path: 'benvenuto', component: BenvenutoComponent, children: [
       {path: '', redirectTo: 'dashboard', pathMatch:'full'},
       {path: 'start', component: StartComponent},
       {path: 'antipasti', component: AntipastiComponent},
-      {path: 'primipiatti', component: PrimipiattiComponent}
+      {path: 'primipiatti', component: PrimipiattiComponent},
+
     ]},
 
 ];
