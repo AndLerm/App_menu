@@ -10,6 +10,7 @@ export class BenvenutoComponent {
   @ViewChild('drawer')
   drawer!: MatDrawer;
   isDrawerOpen: boolean = false;
+  
 
   toggleDrawer() {
     this.drawer.toggle();

@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: '', component: DashboardComponent},
   {path: 'login', component: LoginComponent},
 
-  {path: 'adminPage', component: AdminPageComponent},
+  {path: 'adminPage', component: AdminPageComponent, canActivate: [AuthGuard] },
 
     {path: 'benvenuto', component: BenvenutoComponent, children: [
       {path: '', redirectTo: 'dashboard', pathMatch:'full'},
