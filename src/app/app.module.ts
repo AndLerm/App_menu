@@ -18,8 +18,6 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 
-
-
 import { DashboardComponent } from './componenti/dashboard/dashboard.component';
 import { BenvenutoComponent } from './componenti/benvenuto/benvenuto.component';
 import { AntipastiComponent } from './componenti/antipasti/antipasti.component';
@@ -27,6 +25,15 @@ import { PrimipiattiComponent } from './componenti/primipiatti/primipiatti.compo
 import { StartComponent } from './componenti/start/start.component'; 
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './componenti/login/login.component';
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from '../environments/environment';
+import { AdminPageComponent } from './componenti/admin-page/admin-page.component';
+
 
 
 @NgModule({
@@ -37,7 +44,9 @@ import { LoginComponent } from './componenti/login/login.component';
     AntipastiComponent,
     PrimipiattiComponent,
     StartComponent,
-    LoginComponent
+    LoginComponent,
+    AdminPageComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -54,9 +63,12 @@ import { LoginComponent } from './componenti/login/login.component';
     TextFieldModule,
     MatInputModule,
     FormsModule,
-    HttpClientModule
-
-    
+    HttpClientModule, 
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

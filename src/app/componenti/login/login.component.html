@@ -1,11 +1,35 @@
-<form class="example-form" #formLogin="ngForm" (ngSubmit)="onSubmit(formLogin)" >
-    <mat-form-field class="example-full-width">
-      <mat-label>Email</mat-label>
-      <input matInput placeholder="example@gmail.com" name="email" type="email" ngModel required email>
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-        <mat-label>Password</mat-label>
-        <input matInput placeholder="Password" type="password" name="password" ngModel required>
-      </mat-form-field>
-      <button type="submit" mat-raised-button color="primary" [disabled]="!formLogin.valid">Invia</button>
-</form>
+<div class="displayTable">
+  <div class="displayTableCell">
+    <div class="authBlock">
+      <h3>Sign In</h3>
+      <div class="formGroup">
+        <p>Nome</p>
+        <input
+          type="text"
+          class="formControl"
+          placeholder="Username"
+          #userName
+          required
+        />
+      </div>
+      <div class="formGroup">
+        <input
+          type="password"
+          class="formControl"
+          placeholder="Password"
+          #userPassword
+          required
+        />
+      </div>
+      <!-- Calling SignIn Api from AuthService -->
+      <div class="formGroup">
+        <input
+          type="button"
+          class="btn btnPrimary"
+          value="Log in"
+          (click)="authService.SignIn(userName.value, userPassword.value)"
+          
+        />
+      </div>
+  </div>
+</div>

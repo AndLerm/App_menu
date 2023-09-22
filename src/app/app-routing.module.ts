@@ -7,15 +7,18 @@ import { AntipastiComponent } from './componenti/antipasti/antipasti.component';
 import { PrimipiattiComponent } from './componenti/primipiatti/primipiatti.component';
 import { StartComponent } from './componenti/start/start.component';
 import { LoginComponent } from './componenti/login/login.component';
-
+import { AuthGuard } from './shared/guard/auth.guard';
+import { AdminPageComponent } from './componenti/admin-page/admin-page.component';
 const routes: Routes = [
 
   {path: '', component: DashboardComponent},
   {path: 'login', component: LoginComponent},
 
+  {path: 'adminPage', component: AdminPageComponent},
+
     {path: 'benvenuto', component: BenvenutoComponent, children: [
       {path: '', redirectTo: 'dashboard', pathMatch:'full'},
-      {path: 'start', component: StartComponent},
+      {path: 'start', component: StartComponent,},
       {path: 'antipasti', component: AntipastiComponent},
       {path: 'primipiatti', component: PrimipiattiComponent},
 
