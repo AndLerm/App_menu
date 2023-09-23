@@ -1,35 +1,38 @@
-<div class="displayTable">
-  <div class="displayTableCell">
-    <div class="authBlock">
-      <h3>Sign In</h3>
-      <div class="formGroup">
-        <p>Nome</p>
-        <input
-          type="text"
-          class="formControl"
-          placeholder="Username"
-          #userName
-          required
-        />
-      </div>
-      <div class="formGroup">
-        <input
-          type="password"
-          class="formControl"
-          placeholder="Password"
-          #userPassword
-          required
-        />
-      </div>
-      <!-- Calling SignIn Api from AuthService -->
-      <div class="formGroup">
-        <input
-          type="button"
-          class="btn btnPrimary"
-          value="Log in"
-          (click)="authService.SignIn(userName.value, userPassword.value)"
-          
-        />
-      </div>
+<div class="container-fluid d-flex flex-column align-items-center justify-content-center vh-100">
+  <div class="card">
+  <h2>Admin Panel</h2>
+  <p>Benvenuto in Area riservata, inserisci E-mail e Password</p>
+  <div class="row mt-5">
+    <div class="col-12 col-md-12">
+      <mat-form-field class="example-form-field">
+        <mat-label>E-mail</mat-label>
+        <input matInput type="text" [(ngModel)]="valuemail" #userName required>
+        <button *ngIf="valuemail" matSuffix mat-icon-button aria-label="Clear" (click)="valuemail=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
   </div>
+  <div class="row">
+    <div class="col-12 col-md-12">
+    <mat-form-field class="example-form-field ">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" [(ngModel)]="valuepassword" #userPassword required>
+      <button *ngIf="valuepassword" matSuffix mat-icon-button aria-label="Clear" (click)="valuepassword=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-12">
+    <button mat-raised-button color="primary" (click)="authService.SignIn(userName.value, userPassword.value)">Login</button>
+    </div>
+  </div>
+</div>
+<div class="example-button-container mt-5">
+  <button mat-fab color="primary" aria-label="Example icon button with a home icon" routerLink="">
+    <mat-icon>home</mat-icon>
+  </button>
+</div>
 </div>

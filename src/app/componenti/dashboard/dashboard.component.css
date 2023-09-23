@@ -1,5 +1,5 @@
 .wrapper{
-    /* background: url(/assets/media/passerella.jpg); */
+  background: linear-gradient(to right, #fdbb2d, #22c352);
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -9,22 +9,16 @@
   
   button{
     position: absolute;
-    top: 300px;
+    bottom: 250px;
   }
   
-  h1{
-    position: absolute;
-    top: 200px;
-    font-size: 170px;
-    color: whitesmoke;
-    font-family: 'Allura', cursive;
-  }
+ 
 
   .icons{
     color:black;
-    transform: scale(3.5);
+    transform: scale(2.5);
     position: absolute;
-    top: 580px;
+    top: 250px;
   }
 
   .buttonLogin{
@@ -33,7 +27,23 @@
     top: 30px;
     display: flex;
     align-items: center;
-    font-size: large;
+    transform: scale(1.5);
+    
   }
+
+  .ml2 {
+    font-weight: 900;
+    /* position: absolute;
+    top: 200px; */
+    font-size: 170px;
+    
+    font-family: 'Allura', cursive;
+  }
+  
+  .ml2 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+
 
   

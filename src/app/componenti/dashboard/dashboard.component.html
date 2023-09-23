@@ -3,35 +3,25 @@
 
 
 
-<div class="wrapper p-0 d-flex flex-column align-items-center">
+<div class="wrapper p-0 d-flex flex-column align-items-center justify-content-center">
   
   
-  <div class="buttonLogin">
-    <mat-icon class="mx-2" routerLink="login">account_circle</mat-icon><p routerLink="login">Admin</p>
-    <mat-icon class="mx-2" routerLink="adminPage">account_circle</mat-icon><p routerLink="adminPage">AdminPage</p>
-
-  </div>
-
-    <h1>Ristorante SulMare</h1>
+ 
+  <div class="icons">
+    <mat-icon class="mx-3"> restaurant</mat-icon>
+    <mat-icon class="mx-3">free_breakfast</mat-icon>
+    <mat-icon class="mx-3">beach_access</mat-icon>
+    <mat-icon class="mx-3">wifi</mat-icon>
+   </div>
+    <h1 class="ml2">Ristorante SulMare</h1>
     <button mat-raised-button extended routerLink="benvenuto/start" class="rounded-4 px-5 py-4">
         <mat-icon>restaurant_menu</mat-icon> Apri il menù     
       </button>
-
-    <div class="icons">
-
-      <mat-icon class="mx-3"> restaurant</mat-icon>
-      <mat-icon class="mx-3">free_breakfast</mat-icon>
-      <mat-icon class="mx-3">beach_access</mat-icon>
-      <mat-icon class="mx-3">wifi</mat-icon>
       
-
-
-    </div>
+      
+      <div class="buttonLogin">
+       <mat-icon routerLink="login" *ngIf="!isUserLoggedIn()">account_circle</mat-icon>
+      </div>
+ 
    
 </div>
-
-
-
-   
-
-

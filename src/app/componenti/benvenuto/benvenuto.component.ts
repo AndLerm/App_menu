@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
+import { AuthService } from 'src/app/shared/services/auth.service';
+
 
 @Component({
   selector: 'app-benvenuto',
@@ -7,6 +9,11 @@ import { MatDrawer } from '@angular/material/sidenav';
   styleUrls: ['./benvenuto.component.css']
 })
 export class BenvenutoComponent {
+  constructor(private authService: AuthService){}
+  isUserLoggedIn() : boolean{
+    return this.authService.isLoggedIn; 
+  }
+
   @ViewChild('drawer')
   drawer!: MatDrawer;
   isDrawerOpen: boolean = false;

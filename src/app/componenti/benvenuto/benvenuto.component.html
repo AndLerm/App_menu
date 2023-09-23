@@ -12,7 +12,7 @@
         <mat-list class="buttonList">
             <mat-icon class="mx-4" routerLink="start">arrow_upward</mat-icon>
             <mat-icon class="mx-4" routerLink="">exit_to_app</mat-icon>
-        
+            <p class="mx-2" routerLink="adminPage" *ngIf="isUserLoggedIn()"><mat-icon  routerLink="adminPage">account_circle</mat-icon>AdminPage</p>
         </mat-list>
     </mat-drawer>
     

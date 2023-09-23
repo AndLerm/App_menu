@@ -12,12 +12,12 @@ import { AdminPageComponent } from './componenti/admin-page/admin-page.component
 const routes: Routes = [
 
   {path: '', component: DashboardComponent},
+  
   {path: 'login', component: LoginComponent},
-
-  {path: 'adminPage', component: AdminPageComponent, canActivate: [AuthGuard] },
-
-    {path: 'benvenuto', component: BenvenutoComponent, children: [
-      {path: '', redirectTo: 'dashboard', pathMatch:'full'},
+  
+  {path: 'benvenuto', component: BenvenutoComponent, children: [
+    {path: '', redirectTo: 'dashboard', pathMatch:'full'},
+    {path: 'adminPage', component: AdminPageComponent, canActivate: [AuthGuard] },
       {path: 'start', component: StartComponent,},
       {path: 'antipasti', component: AntipastiComponent},
       {path: 'primipiatti', component: PrimipiattiComponent},
