@@ -17,6 +17,7 @@ import {TextFieldModule} from '@angular/cdk/text-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
 
 import { DashboardComponent } from './componenti/dashboard/dashboard.component';
 import { BenvenutoComponent } from './componenti/benvenuto/benvenuto.component';
@@ -33,6 +34,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
 import { AdminPageComponent } from './componenti/admin-page/admin-page.component';
+
 
 
 
@@ -69,6 +71,8 @@ import { AdminPageComponent } from './componenti/admin-page/admin-page.component
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    MatSelectModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

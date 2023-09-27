@@ -11,6 +11,15 @@ export class AdminPageComponent implements OnInit {
   constructor(public authService: AuthService) {}
   ngOnInit(): void {}
 
+  showFiller = false;
+
+  
+  isSidenavOpen = false;
+
+  toggleSidenav() {
+    this.isSidenavOpen = !this.isSidenavOpen;
+  }
+
 }
 
 
