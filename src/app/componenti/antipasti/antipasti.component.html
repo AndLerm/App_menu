@@ -1,22 +1,14 @@
-<div class="d-flex justify-content-evenly mt-5">
-
+<div class="d-flex justify-content-evenly mt-5" *ngFor="let antipasto of antipasti">
     <mat-card class="example-card rounded-5">
       <img mat-card-image src="../../../assets/media/gamberiLuna.jpg" alt="Photo of a Shiba Inu">
-
-      <mat-card-title class="mx-3 mt-1 text-secondary">Nome Antipasto</mat-card-title>
-      <mat-card-subtitle class="mx-3 mt-2">
-        Qui ci scriverei gli ingredienti del prodotto. 
-        La scritta non esce fuori!
-        
-      </mat-card-subtitle>
-
-      <mat-card-subtitle class="mx-3 mt-1"> € </mat-card-subtitle>
-
-
-    
-      
+      <mat-card-title class="mx-3 mt-1 text-secondary">{{ antipasto.nome }}</mat-card-title>
+      <mat-card-subtitle class="mx-3 mt-2">{{ antipasto.descrizione }}</mat-card-subtitle>
+      <mat-card-subtitle class="mx-3 mt-1">Prezzo: {{ antipasto.prezzo }}</mat-card-subtitle>
     </mat-card>
+</div>
     
 
+
+     
 
 

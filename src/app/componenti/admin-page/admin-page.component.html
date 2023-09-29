@@ -20,31 +20,31 @@
   <div class="sidenav w-75 " [ngClass]="{'open': isSidenavOpen}">
     <div class="container">
       <div class="row justify-content-center mt-5">
-        <div class="col-12 col-md-6 d-flex flex-column">
+        <form class="col-12 col-md-6 d-flex flex-column" [formGroup]="piattiForm" (ngSubmit)="onSubmit()">
           <mat-form-field>
             <mat-label>Seleziona in che sezione vuoi inserire il piatto</mat-label>
-            <mat-select>
-              <mat-option value="option1">Antipasti</mat-option>
-              <mat-option value="option2">Primi</mat-option>
-              <mat-option value="option3">Secondi</mat-option>
+            <mat-select id="categoria" [(ngModel)]="selectedCategory" formControlName="categoria" name="categoria" required>
+              <mat-option value="antipasti">Antipasti</mat-option>
+              <mat-option value="primipiatti">Primi</mat-option>
+              <mat-option value="secondipiatti">Secondi</mat-option>
             </mat-select>
           </mat-form-field>
 
           <mat-form-field>
             <mat-label>Nome</mat-label>
-            <input matInput>
+            <input matInput type="text" id="nome"  name="nome" required formControlName="nome">
           </mat-form-field>
           <mat-form-field>
             <mat-label>Descrizione</mat-label>
-            <input matInput>
+            <input matInput type="text" id="descrizione"  name="descrizione" required formControlName="descrizione">
           </mat-form-field>
           <mat-form-field>
             <mat-label>Prezzo</mat-label>
-            <input matInput>
+            <input matInput  type="number" id="prezzo" name="prezzo" required formControlName="prezzo">
           </mat-form-field>
           
-          
-        </div>
+          <button type="submit">Aggiungi</button>
+        </form>
       </div>
     </div>
   </div>

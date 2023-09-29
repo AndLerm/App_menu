@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
+
+
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
@@ -32,8 +34,10 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { environment } from '../environments/environment';
+
 import { AdminPageComponent } from './componenti/admin-page/admin-page.component';
+import { environment } from 'src/environments/environment';
+import { SecondipiattiComponent } from './componenti/secondipiatti/secondipiatti.component';
 
 
 
@@ -48,6 +52,7 @@ import { AdminPageComponent } from './componenti/admin-page/admin-page.component
     StartComponent,
     LoginComponent,
     AdminPageComponent,
+    SecondipiattiComponent,
    
   ],
   imports: [
@@ -66,12 +71,14 @@ import { AdminPageComponent } from './componenti/admin-page/admin-page.component
     MatInputModule,
     FormsModule,
     HttpClientModule, 
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
-    MatSelectModule
+    MatSelectModule,
+    
+    
 
   ],
   providers: [],

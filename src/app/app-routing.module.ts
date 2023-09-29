@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, withDisabledInitialNavigation } from '@angular/router';
+
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './componenti/dashboard/dashboard.component';
 import { BenvenutoComponent } from './componenti/benvenuto/benvenuto.component';
@@ -9,6 +10,7 @@ import { StartComponent } from './componenti/start/start.component';
 import { LoginComponent } from './componenti/login/login.component';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { AdminPageComponent } from './componenti/admin-page/admin-page.component';
+import { SecondipiattiComponent } from './componenti/secondipiatti/secondipiatti.component';
 const routes: Routes = [
 
   {path: '', component: DashboardComponent},
@@ -21,6 +23,8 @@ const routes: Routes = [
       {path: 'start', component: StartComponent,},
       {path: 'antipasti', component: AntipastiComponent},
       {path: 'primipiatti', component: PrimipiattiComponent},
+      {path: 'secondipiatti', component: SecondipiattiComponent},
+
 
     ]},
 
