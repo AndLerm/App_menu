@@ -11,8 +11,8 @@ import { FirebaseService } from 'src/app/service/firebase.service';
 })
 export class AntipastiComponent {
 
-antipasti:any;
-  // antipasti: MenuItem[] = [];
+
+  antipasti: MenuItem[] = [];
 
   constructor(private menuService: MenuService, private firebase:FirebaseService) {}
 

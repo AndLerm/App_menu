@@ -20,6 +20,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { DashboardComponent } from './componenti/dashboard/dashboard.component';
 import { BenvenutoComponent } from './componenti/benvenuto/benvenuto.component';
@@ -77,6 +78,7 @@ import { SecondipiattiComponent } from './componenti/secondipiatti/secondipiatti
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     MatSelectModule,
+    MatDialogModule
     
     
 

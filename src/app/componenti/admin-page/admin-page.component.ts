@@ -31,7 +31,7 @@ export class AdminPageComponent implements OnInit {
     })
   }
 
-  showFiller = false;
+  
   isSidenavOpen = false;
 
   toggleSidenav() {
@@ -48,6 +48,7 @@ export class AdminPageComponent implements OnInit {
           this.firebase.insertAntipasto('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/antipasti.json', 
           {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo })
           .subscribe(data => {});
+          alert('piatto inserito correttamente')
           this.router.navigate(['benvenuto/antipasti']);
         } 
           else if (this.selectedCategory === 'primipiatti')
@@ -55,13 +56,15 @@ export class AdminPageComponent implements OnInit {
           this.firebase.insertPrimo('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/primipiatti.json', 
         {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo })
         .subscribe(data => {})
-          this.router.navigate(['benvenuto/primipiatti']);
+        alert('piatto inserito correttamente')
+        this.router.navigate(['benvenuto/primipiatti']);
         }
         else if (this.selectedCategory === 'secondipiatti')
         {
           this.firebase.insertSecondo('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/secondipiatti.json', 
           {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo })
           .subscribe(data => {})
+          alert('piatto inserito correttamente')
           this.router.navigate(['benvenuto/secondipiatti']);
         }
       }
