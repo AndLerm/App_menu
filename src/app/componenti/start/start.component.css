@@ -1,6 +1,6 @@
 h1{
     font-size: 170px;
-    color:#fbda55;
+    /* color:#fbda55; */
     font-family: 'Allura', cursive;
   }
 
@@ -9,7 +9,7 @@ p{
     font-size: 35px;
     word-spacing: 10px;
     letter-spacing: 5px;
-    color:#329807;
+    /* color:#329807; */
     font-family: 'Allura', cursive;
     font-weight: bold;
   }
@@ -27,7 +27,7 @@ p{
     font-size: 35px;
     word-spacing: 10px;
     letter-spacing: 5px;
-    color:#329807;
+    /* color:#329807; */
     font-family: 'Allura', cursive;
     font-weight: bold;
   }

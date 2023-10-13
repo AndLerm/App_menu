@@ -6,13 +6,13 @@
             <mat-list-item role="listitem" routerLink="start" routerLinkActive="active">Benvenuto</mat-list-item>
             <mat-list-item role="listitem" routerLink="antipasti" routerLinkActive="active">Antipasti</mat-list-item>
             <mat-list-item role="listitem" routerLink="primipiatti" routerLinkActive="active">Primi</mat-list-item>
-            <mat-list-item role="listitem" routerLink="secondipiatti">Secondi</mat-list-item>   
+            <mat-list-item role="listitem" routerLink="secondipiatti" routerLinkActive="active">Secondi</mat-list-item>   
         </mat-list>
 
         <mat-list class="buttonList">
             <mat-icon class="mx-4" routerLink="start">arrow_upward</mat-icon>
-            <mat-icon class="mx-4" routerLink="">exit_to_app</mat-icon>
-            <p class="mx-2" routerLink="adminPage" *ngIf="isUserLoggedIn()"><mat-icon  routerLink="adminPage">account_circle</mat-icon>AdminPage</p>
+            <mat-icon class="mx-4" routerLink="">home</mat-icon>
+            <p class="mx-2" routerLink="adminPage" *ngIf="isUserLoggedIn()"><mat-icon>account_circle</mat-icon>AdminPage</p>
         </mat-list>
     </mat-drawer>
     

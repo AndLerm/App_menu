@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AuthService } from '../../shared/services/auth.service';
 import { MenuService } from '../../menu.service';
 import { MenuItem } from '../../menu-item';
 import { FirebaseService } from 'src/app/service/firebase.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 
@@ -18,8 +19,8 @@ export class AdminPageComponent implements OnInit {
   menuItem: MenuItem = new MenuItem();
   selectedCategory: string = this.menuItem.categoria;
   
-
-  constructor(public authService: AuthService , private menuService: MenuService, private firebase:FirebaseService, private router: Router) {}
+@Output () add = new EventEmitter
+  constructor(public authService: AuthService , private menuService: MenuService, private firebase:FirebaseService, private router: Router, private toastr: ToastrService) {}
 
 
   ngOnInit(): void {
@@ -48,7 +49,7 @@ export class AdminPageComponent implements OnInit {
           this.firebase.insertAntipasto('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/antipasti.json', 
           {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo })
           .subscribe(data => {});
-          alert('piatto inserito correttamente')
+           this.toastr.success('Piatto inserito correttamente');
           this.router.navigate(['benvenuto/antipasti']);
         } 
           else if (this.selectedCategory === 'primipiatti')
@@ -56,7 +57,7 @@ export class AdminPageComponent implements OnInit {
           this.firebase.insertPrimo('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/primipiatti.json', 
         {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo })
         .subscribe(data => {})
-        alert('piatto inserito correttamente')
+         this.toastr.success('Piatto inserito correttamente');
         this.router.navigate(['benvenuto/primipiatti']);
         }
         else if (this.selectedCategory === 'secondipiatti')
@@ -64,7 +65,7 @@ export class AdminPageComponent implements OnInit {
           this.firebase.insertSecondo('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/secondipiatti.json', 
           {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo })
           .subscribe(data => {})
-          alert('piatto inserito correttamente')
+           this.toastr.success('Piatto inserito correttamente');
           this.router.navigate(['benvenuto/secondipiatti']);
         }
       }

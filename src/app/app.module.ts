@@ -22,6 +22,8 @@ import {FormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
 
+import { ToastrModule } from 'ngx-toastr';
+
 import { DashboardComponent } from './componenti/dashboard/dashboard.component';
 import { BenvenutoComponent } from './componenti/benvenuto/benvenuto.component';
 import { AntipastiComponent } from './componenti/antipasti/antipasti.component';
@@ -78,7 +80,8 @@ import { SecondipiattiComponent } from './componenti/secondipiatti/secondipiatti
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+    ToastrModule.forRoot()
     
     
 
