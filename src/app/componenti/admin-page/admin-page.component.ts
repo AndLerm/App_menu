@@ -48,25 +48,31 @@ export class AdminPageComponent implements OnInit {
         { 
           this.firebase.insertAntipasto('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/antipasti.json', 
           {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo })
-          .subscribe(data => {});
-           this.toastr.success('Piatto inserito correttamente');
-          this.router.navigate(['benvenuto/antipasti']);
+          .subscribe(data => {
+            this.toastr.success('Piatto inserito correttamente');
+            this.router.navigate(['benvenuto/antipasti']);
+
+          });
         } 
           else if (this.selectedCategory === 'primipiatti')
         {
           this.firebase.insertPrimo('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/primipiatti.json', 
         {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo })
-        .subscribe(data => {})
-         this.toastr.success('Piatto inserito correttamente');
-        this.router.navigate(['benvenuto/primipiatti']);
+        .subscribe(data => {
+          this.toastr.success('Piatto inserito correttamente');
+          this.router.navigate(['benvenuto/primipiatti']);
+        })
+        
         }
         else if (this.selectedCategory === 'secondipiatti')
         {
           this.firebase.insertSecondo('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/secondipiatti.json', 
           {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo })
-          .subscribe(data => {})
-           this.toastr.success('Piatto inserito correttamente');
-          this.router.navigate(['benvenuto/secondipiatti']);
+          .subscribe(data => {
+            this.toastr.success('Piatto inserito correttamente');
+            this.router.navigate(['benvenuto/secondipiatti']);
+          })
+           
         }
       }
 }
