@@ -4,4 +4,5 @@ export class MenuItem {
     prezzo: number;
     categoria: string;
     img: string;
+    isTruncated: boolean;
   }

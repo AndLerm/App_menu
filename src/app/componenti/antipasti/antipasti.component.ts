@@ -16,7 +16,7 @@ import { HttpClient } from '@angular/common/http';
 export class AntipastiComponent {
 
   antipasti: MenuItem[] = [];  
-
+  isTruncated : boolean = true;
   constructor(private menuService: MenuService, private firebase:FirebaseService, private toastr: ToastrService, private http: HttpClient) {}
 
   itemIds: string[] = [];
@@ -31,17 +31,21 @@ export class AntipastiComponent {
     this.firebase.getAntipasto('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/antipasti.json').subscribe((data : any) =>{
       if (data) {
         this.antipasti = Object.keys(data).map((key) => {
+          data[key].isTruncated = true; //per nascondere la descrizione
           this.itemIds.push(key);
           return data[key];          
         });
         console.log(this.antipasti);
-
       } else {
         // Tratta il caso in cui data è null o undefined restituendo un array vuoto.
         this.antipasti = [];
       }
     }
     )
+  }
+
+  toggleTruncate(antipasto: MenuItem) {
+    antipasto.isTruncated = !antipasto.isTruncated;
   }
 
 
