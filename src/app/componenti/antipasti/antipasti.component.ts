@@ -3,6 +3,7 @@ import { MenuService } from '../../menu.service';
 import { MenuItem } from 'src/app/menu-item';
 import { FirebaseService } from 'src/app/service/firebase.service';
 import { ToastrService } from 'ngx-toastr';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -14,11 +15,9 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AntipastiComponent {
 
+  antipasti: MenuItem[] = [];  
 
-  antipasti: MenuItem[] = [];
-
-  constructor(private menuService: MenuService, private firebase:FirebaseService, private toastr: ToastrService) {}
-
+  constructor(private menuService: MenuService, private firebase:FirebaseService, private toastr: ToastrService, private http: HttpClient) {}
 
   itemIds: string[] = [];
 
@@ -33,8 +32,10 @@ export class AntipastiComponent {
       if (data) {
         this.antipasti = Object.keys(data).map((key) => {
           this.itemIds.push(key);
-          return data[key];
+          return data[key];          
         });
+        console.log(this.antipasti);
+
       } else {
         // Tratta il caso in cui data è null o undefined restituendo un array vuoto.
         this.antipasti = [];
@@ -43,13 +44,15 @@ export class AntipastiComponent {
     )
   }
 
+
   deleteItem(itemId: string) {
-    const databaseUrl = 'https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app';
     const nodePath = 'antipasti/' + itemId + '.json';
+    const databaseUrl = 'https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app';
+
   
     this.firebase.deleteData(`${databaseUrl}/${nodePath}`).subscribe({
       next: () => {
-        this.toastr.error('Piatto eliminato con successo!');
+        this.toastr.error('Antipasto eliminato con successo!');
         // Puoi aggiornare la vista o fare altre azioni dopo l'eliminazione
         this.getItem()
         this.antipasti = this.menuService.getMenuItems('antipasti');
@@ -58,5 +61,6 @@ export class AntipastiComponent {
         console.error('Errore durante l\'eliminazione dell\'elemento:', error);
       }
     });
+  }
 }
-}
+

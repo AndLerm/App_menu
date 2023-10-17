@@ -20,7 +20,7 @@
   <div class="sidenav w-75 " [ngClass]="{'open': isSidenavOpen}">
     <div class="container">
       <div class="row justify-content-center mt-5">
-        <form class="col-12 col-md-6 d-flex flex-column" [formGroup]="piattiForm" (ngSubmit)="onSubmit()">
+        <form class="col-12 col-md-6 d-flex flex-column" [formGroup]="piattiForm" (ngSubmit)="onSubmit($event)">
           <mat-form-field>
             <mat-label>Seleziona in che sezione vuoi inserire il piatto</mat-label>
             <mat-select id="categoria" [(ngModel)]="selectedCategory" formControlName="categoria" name="categoria" required>
@@ -30,6 +30,13 @@
             </mat-select>
           </mat-form-field>
 
+          <!-- img -->
+          <!-- <mat-form-field>
+            <mat-label>Aggiungi un immagine</mat-label>
+            <input type="file" id="img" name="img" required formControlName="img" (change)="onFileSelected($event)">
+          </mat-form-field> -->
+
+        
           <mat-form-field>
             <mat-label>Nome</mat-label>
             <input matInput type="text" id="nome"  name="nome" required formControlName="nome">
@@ -42,6 +49,11 @@
             <mat-label>Prezzo</mat-label>
             <input matInput  type="number" id="prezzo" name="prezzo" required formControlName="prezzo">
           </mat-form-field>
+
+          <input type="file" (change)="onSubmit($event)">
+
+
+
           
           <button type="submit">Aggiungi</button>
         </form>
