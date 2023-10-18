@@ -1,4 +1,8 @@
 .example-card {
     width: 240px;
-    height: 380px;
-}
+    min-height: 490px;
+ }
+
+ .btn-show{
+    width: 50px;
+ }

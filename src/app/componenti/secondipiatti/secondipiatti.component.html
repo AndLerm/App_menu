@@ -1,13 +1,18 @@
-<div class="d-flex justify-content-evenly align-items-center mt-5" >
-    <mat-card class="example-card rounded-5" *ngFor="let secondo of secondipiatti let i = index">
-      <img mat-card-image alt="Photo of a Shiba Inu" *ngIf="secondo.img" [src]="secondo.img">
-      <mat-card-title class="mx-3 mt-1 text-secondary">{{ secondo.nome }}</mat-card-title>
-      <mat-card-subtitle class="mx-3 mt-2">{{ secondo.descrizione }}</mat-card-subtitle>
-      <mat-card-subtitle class="mx-3 mt-1">Prezzo: {{ secondo.prezzo }}</mat-card-subtitle>
-      <div class="d-flex justify-content-start mt-4 ms-2">
+<div class="d-flex justify-content-evenly align-items-center flex-wrap mt-5">
+  <mat-card class="example-card rounded-5"  *ngFor="let secondo of secondipiatti; let i = index">
+    <img class="img-card align-self-center" alt="Photo of a Shiba Inu" *ngIf="secondo.img" [src]="secondo.img">
+    <mat-card-title class="mx-3 mt-1 text-secondary">{{ secondo.nome }}</mat-card-title>
+    <mat-card-subtitle class="py-2 px-3" [ngClass]="{ 'text-truncate' : secondo.isTruncated}">{{ secondo.descrizione }}</mat-card-subtitle>
+    <i [ngClass]="secondo.isTruncated ? 'fa-chevron-down' : 'fa-chevron-up'" class="btn-show fa-solid py-2 px-3" (click)="toggleTruncate(secondo)">{{secondo.isTruncated ? 'mostra' : 'chiudi'}}</i>
+    <mat-card-subtitle class="mx-3 mt-1">Prezzo: {{ secondo.prezzo }}</mat-card-subtitle>
+    <div class="d-flex justify-content-start mt-4 ms-2">
+      <span class="position-absolute top-0 start-100 translate-middle badge" *ngIf="isUserLoggedIn()">
         <button mat-fab color="warn" aria-label="Example icon button with a delete icon" (click)="deleteItem(itemIds[i])">
           <mat-icon>delete</mat-icon>
         </button>
-      </div>
-    </mat-card>
+      </span>
+    
+   </div>
+  </mat-card>
 </div>
+

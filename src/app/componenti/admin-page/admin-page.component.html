@@ -30,11 +30,7 @@
             </mat-select>
           </mat-form-field>
 
-          <!-- img -->
-          <!-- <mat-form-field>
-            <mat-label>Aggiungi un immagine</mat-label>
-            <input type="file" id="img" name="img" required formControlName="img" (change)="onFileSelected($event)">
-          </mat-form-field> -->
+          
 
         
           <mat-form-field>
@@ -50,11 +46,7 @@
             <input matInput  type="number" id="prezzo" name="prezzo" required formControlName="prezzo">
           </mat-form-field>
 
-          <input type="file" (change)="onSubmit($event)">
-
-
-
-          
+          <input type="file"(change)="onSubmit($event)">           
           <button type="submit">Aggiungi</button>
         </form>
       </div>

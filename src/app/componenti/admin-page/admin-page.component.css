@@ -23,3 +23,8 @@
   *{
     font-family: "Font Awesome 6 Free";
   }
+
+  .error {
+    color: red;
+    font-size: 12px;
+  }

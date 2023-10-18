@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-
+import {MatBadgeModule} from '@angular/material/badge';
 import {MatSidenavModule} from '@angular/material/sidenav';  
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card'; 
@@ -21,7 +21,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import { MaterialFileInputModule } from 'ngx-material-file-input';
 import { ToastrModule } from 'ngx-toastr';
 
 import { DashboardComponent } from './componenti/dashboard/dashboard.component';
@@ -81,7 +81,9 @@ import { SecondipiattiComponent } from './componenti/secondipiatti/secondipiatti
     AngularFireDatabaseModule,
     MatSelectModule,
     MatDialogModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MatBadgeModule,
+    MaterialFileInputModule
     
     
 
