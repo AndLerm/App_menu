@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-evenly align-items-center flex-wrap mt-5">
+<div class="d-flex justify-content-evenly align-items-start flex-wrap mt-5">
   <mat-card class="example-card rounded-5"  *ngFor="let primo of primipiatti; let i = index">
     <img class="img-card align-self-center" alt="Photo of a Shiba Inu" *ngIf="primo.img" [src]="primo.img">
     <mat-card-title class="mx-3 mt-1 text-secondary">{{ primo.nome }}</mat-card-title>

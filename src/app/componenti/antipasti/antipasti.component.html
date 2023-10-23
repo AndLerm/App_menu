@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-evenly align-items-center flex-wrap mt-5">
+<!-- <div class="d-flex justify-content-evenly align-items-start flex-wrap mt-5">
     <mat-card class="example-card rounded-5"  *ngFor="let antipasto of antipasti; let i = index">
       <img class="img-card align-self-center" alt="Photo of a Shiba Inu" *ngIf="antipasto.img" [src]="antipasto.img">
       <mat-card-title class="mx-3 mt-1 text-secondary">{{ antipasto.nome }}</mat-card-title>
@@ -14,4 +14,24 @@
       
      </div>
     </mat-card>
-</div>
+</div> -->
+
+<div id="header">
+  <h1>La Saveur</h1>
+  <p>The Traditional Fench Taste</p>
+    </div>
+  <div class="container">
+  <div class="card" *ngFor="let antipasto of antipasti; let i = index">
+    <div class="card-image">
+      <img *ngIf="antipasto.img" [src]="antipasto.img">
+    </div>
+    <div class="card-text">
+    
+      <h2 class="card-title">{{ antipasto.nome }}</h2>
+      <p class="card-body">{{ antipasto.descrizione }}</p>
+    </div>
+    <div class="card-price">€{{ antipasto.prezzo }}</div>
+  </div>
+    
+  
+  </div>
