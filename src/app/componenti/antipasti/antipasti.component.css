@@ -1,9 +1,12 @@
 .card {
+  min-height: 450px;
   width: 300px;
   padding: 50px 30px 50px 20px;
   background: #ffffff;
   border-radius: 24px;
   margin: 100px;
+  position: relative;
+  
 }
 
 .card img {
@@ -16,19 +19,32 @@
 }
 
 .btn{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
   position: absolute;
-  top: -25px;
-  background-color: rgb(211, 5, 5);
-  color: #ffffff;
-  display: none;
-  transform: translateX(-50%);
-  cursor: pointer;
+  top: 15px;
+  left: -45px; 
+  background-color: white;
+  color: rgb(231, 50, 50);
+  border: 2px solid rgb(231, 50, 50);
   border-radius: 50%;
-  padding: 15px;
+  cursor: pointer;
+  opacity: 0;
+  transition: transform 400ms ease-out; 
+ }
+
+.card:hover{
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
+
 .card:hover .btn{
-  display: block;
+  transform: translate(40px, -40px) scale(0.9, 1);
+  opacity: 1;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 @media (width <= 740px) {
@@ -52,3 +68,20 @@
     max-width: 1000px;
   }
 }
+
+.btn-show{
+  font-family: 'Advent Pro', sans-serif;
+  font-weight: bold; 
+}
+
+
+.text-cursive{
+  font-family: 'Allura', cursive;
+}
+
+.text-dark{
+  position: absolute;
+  bottom: 50px;
+  left: 100px;
+}
+

@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-evenly align-items-start flex-wrap mt-5">
   <mat-card class="example-card rounded-5"  *ngFor="let secondo of secondipiatti; let i = index">
-    <img class="img-card align-self-center" alt="Photo of a Shiba Inu" *ngIf="secondo.img" [src]="secondo.img">
+    <img  alt="Photo of a Shiba Inu" *ngIf="secondo.img" [src]="secondo.img">
     <mat-card-title class="mx-3 mt-1 text-secondary">{{ secondo.nome }}</mat-card-title>
     <mat-card-subtitle class="py-2 px-3" [ngClass]="{ 'text-truncate' : secondo.isTruncated}">{{ secondo.descrizione }}</mat-card-subtitle>
     <i [ngClass]="secondo.isTruncated ? 'fa-chevron-down' : 'fa-chevron-up'" class="btn-show fa-solid py-2 px-3" (click)="toggleTruncate(secondo)">{{secondo.isTruncated ? 'mostra' : 'chiudi'}}</i>
