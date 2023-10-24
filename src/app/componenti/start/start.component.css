@@ -1,33 +1,27 @@
-h1{
-    font-size: 170px;
-    /* color:#fbda55; */
-    font-family: 'Allura', cursive;
-  }
-
 p{
     margin-top: 50px;
     font-size: 35px;
     word-spacing: 10px;
     letter-spacing: 5px;
-    /* color:#329807; */
     font-family: 'Allura', cursive;
     font-weight: bold;
+    line-height: 0.8;
+
   }
 
-  mat-icon{
-    transform: scale(3.5);
-    margin-bottom: 100px;
-  }
-
-  .containerTitle{
-    height: 700px;
-  }
-
-  h2{
-    font-size: 35px;
+h2{
+    font-size: 50px;
     word-spacing: 10px;
     letter-spacing: 5px;
-    /* color:#329807; */
     font-family: 'Allura', cursive;
     font-weight: bold;
   }
+
+h4{
+  font-size: 30px;
+    word-spacing: 10px;
+    letter-spacing: 5px;
+    font-family: 'Allura', cursive;
+    font-weight: bold;
+
+}
