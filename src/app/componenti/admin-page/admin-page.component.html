@@ -1,25 +1,27 @@
   <div class="container-fluid">
-    <div class="row border-bottom border-dark">
-      <div class="pt-3 pb-2 mb-3  col-12 col-md-2" *ngIf="authService.userData as user">
-        <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'Admin'}}</strong></h1>
-        <p>Email: <strong>{{user.email}}</strong></p>
-      </div>
-      <div class="col-12 col-md-10 pt-5 pb-2 mb-3 d-flex justify-content-evenly ">
-        
+        <div class="row border-bottom border-dark justify-content-center">
+            <div class="pt-3 pb-2 ms-5 mb-3 col-12 col-md-11 d-flex flex-column align-items-center" *ngIf="authService.userData as user">
+              <p class="fs-2 mb-3">Hello, <strong>{{(user.displayName) ? user.displayName : 'Admin'}}</strong></p>
+              <p class="fs-5">Email: <strong>{{user.email}}</strong></p>
+              <button class="btn btnLogout" (click)="authService.SignOut()">
+                <i class="fa-solid fa-right-from-bracket" style="color: #000000;">Logout</i>
+              </button>
+            </div>
+        </div>
+  <div>
+
+      <div class="col-12 col-md-12 pt-5 pb-2 mb-3 d-flex justify-content-center ">
         <button class="btn"(click)="toggleSidenav()">
           <i class="fa-solid fa-plus fa-xl" style="color: #000000;">Inserisci un piatto</i>
         </button>
-        <button class="btn" (click)="authService.SignOut()">
-          <i class="fa-solid fa-right-from-bracket fa-xl" style="color: #000000;">Logout</i>
-        </button>
-        
       </div>
-    </div>
+      </div>
   </div>
-  <div class="container d-flex justify-content-center">
+  
+  <div class="container">
   <div class="sidenav w-75 " [ngClass]="{'open': isSidenavOpen}">
-    <div class="container">
-      <div class="row justify-content-center mt-5">
+    <!-- <div class="container"> -->
+      <div class="row justify-content-center mt-1">
         <form class="col-12 col-md-6 d-flex flex-column" [formGroup]="piattiForm" (ngSubmit)="onSubmit($event)">
           <mat-form-field>
             <mat-label>Seleziona in che sezione vuoi inserire il piatto</mat-label>
@@ -30,9 +32,6 @@
             </mat-select>
           </mat-form-field>
 
-          
-
-        
           <mat-form-field>
             <mat-label>Nome</mat-label>
             <input matInput type="text" id="nome"  name="nome" required formControlName="nome">
@@ -45,12 +44,15 @@
             <mat-label>Prezzo</mat-label>
             <input matInput  type="number" id="prezzo" name="prezzo" required formControlName="prezzo">
           </mat-form-field>
-
-          <input type="file"(change)="onSubmit($event)">           
-          <button type="submit">Aggiungi</button>
+          
+          <input class="" type="file"(change)="onSubmit($event)">           
+          <button mat-raised-button extended type="submit" class="rounded-4 mt-3 px-5 py-4">
+             <i class="fa-solid fa-plus fa-lg"> Aggiungi piatto</i>
+          </button>
         </form>
       </div>
-    </div>
+    <!-- </div> -->
   </div>
 </div>
   
+
