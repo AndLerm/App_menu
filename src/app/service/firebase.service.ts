@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FirebaseService {
+  insertPiatto(selectedCategory: string, arg1: { nome: any; descrizione: any; prezzo: any; img: string; }) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private http: HttpClient) { }
 

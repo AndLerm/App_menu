@@ -1,8 +1,8 @@
   <div class="container-fluid">
         <div class="row border-bottom border-dark justify-content-center">
             <div class="pt-3 pb-2 ms-5 mb-3 col-12 col-md-11 d-flex flex-column align-items-center" *ngIf="authService.userData as user">
-              <p class="fs-2 mb-3">Hello, <strong>{{(user.displayName) ? user.displayName : 'Admin'}}</strong></p>
-              <p class="fs-5">Email: <strong>{{user.email}}</strong></p>
+              <p class="fs-2 mb-3">Ciao, <strong>{{(user.displayName) ? user.displayName : 'Admin'}}</strong></p>
+              <p class="fs-6">Email: <strong>{{user.email}}</strong></p>
               <button class="btn btnLogout" (click)="authService.SignOut()">
                 <i class="fa-solid fa-right-from-bracket" style="color: #000000;">Logout</i>
               </button>
@@ -20,7 +20,7 @@
   
   <div class="container">
   <div class="sidenav w-75 " [ngClass]="{'open': isSidenavOpen}">
-    <!-- <div class="container"> -->
+    
       <div class="row justify-content-center mt-1">
         <form class="col-12 col-md-6 d-flex flex-column" [formGroup]="piattiForm" (ngSubmit)="onSubmit($event)">
           <mat-form-field>
@@ -45,13 +45,13 @@
             <input matInput  type="number" id="prezzo" name="prezzo" required formControlName="prezzo">
           </mat-form-field>
           
-          <input class="" type="file"(change)="onSubmit($event)">           
+          <input type="file" name="img" formControlName="img" id="img">           
           <button mat-raised-button extended type="submit" class="rounded-4 mt-3 px-5 py-4">
              <i class="fa-solid fa-plus fa-lg"> Aggiungi piatto</i>
           </button>
         </form>
       </div>
-    <!-- </div> -->
+ 
   </div>
 </div>
   

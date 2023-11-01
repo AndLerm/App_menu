@@ -32,7 +32,8 @@ export class AdminPageComponent implements OnInit {
       nome : new FormControl(),
       descrizione : new FormControl(),
       prezzo : new FormControl(),
-      categoria : new FormControl(),    
+      categoria : new FormControl(),
+      img : new FormControl(),    
     })
   }
   
@@ -43,18 +44,26 @@ export class AdminPageComponent implements OnInit {
   
   
   onSubmit(event: any) {
-    this.menuItem = new MenuItem(); // Pulisce il form dopo l'invio
-    this.menuService.addMenuItem(this.selectedCategory, this.menuItem);
+    event.preventDefault();
     
-    const file = event.target.files[0]; // Ottieni il file selezionato
+
+    if (!this.piattiForm.value) {
+      return;
+    }
+  
+    console.log(event);
+    
+    const file = event.target[3].files[0]; // Ottieni il file selezionato
     let filePath = '' + file.name; // percorso Firebase Storage
     const fileRef = this.storage.ref(filePath); // riferimento al file
+    this.menuItem = new MenuItem(); // Pulisce il form dopo l'invio
+    this.menuService.addMenuItem(this.selectedCategory, this.menuItem);
    
     
     
     // Caricamento file su Firebase Storage
     const task = this.storage.upload(filePath, file);
-    
+
     // Caricamento img nel database
     task.snapshotChanges().subscribe((snapshot) => {
       if (snapshot.state === 'success') {
@@ -97,15 +106,15 @@ export class AdminPageComponent implements OnInit {
               this.toastr.success('Piatto inserito correttamente');
               this.router.navigate(['benvenuto/secondipiatti']);
             })
+            
           }
-          
         });
       }
     });
     
-   
     
-
+    
+    
   }
   
   

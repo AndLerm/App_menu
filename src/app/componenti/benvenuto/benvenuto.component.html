@@ -12,7 +12,10 @@
         <mat-list class="buttonList">
             <mat-icon class="mx-4" routerLink="start">arrow_upward</mat-icon>
             <mat-icon class="mx-4" routerLink="">home</mat-icon>
-            <p class="mx-2" routerLink="adminPage" *ngIf="isUserLoggedIn()"><mat-icon>account_circle</mat-icon>AdminPage</p>
+        </mat-list>
+
+        <mat-list class="buttonAdm">
+            <p class="mx-4 mb-3" routerLink="adminPage" *ngIf="isUserLoggedIn()"><mat-icon>account_circle</mat-icon>AdminPage</p>
         </mat-list>
     </mat-drawer>
     
