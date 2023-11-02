@@ -5,6 +5,7 @@
     <mat-card-subtitle class="py-2 px-3" [ngClass]="{ 'text-truncate' : primo.isTruncated}">{{ primo.descrizione }}</mat-card-subtitle>
     <i [ngClass]="primo.isTruncated ? 'fa-chevron-down' : 'fa-chevron-up'" class="btn-show fa-solid py-2 px-3" (click)="toggleTruncate(primo)">{{primo.isTruncated ? 'mostra' : 'chiudi'}}</i>
     <mat-card-subtitle class="mx-3 mt-1">Prezzo: {{ primo.prezzo }}</mat-card-subtitle>
+    
     <div class="d-flex justify-content-start mt-4 ms-2">
       <span class="position-absolute top-0 start-100 translate-middle badge" *ngIf="isUserLoggedIn()">
         <button mat-fab color="warn" aria-label="Example icon button with a delete icon" (click)="deleteItem(itemIds[i])">

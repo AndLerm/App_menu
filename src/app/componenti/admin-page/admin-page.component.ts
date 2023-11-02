@@ -44,14 +44,6 @@ export class AdminPageComponent implements OnInit {
   
   
   onSubmit(event: any) {
-    event.preventDefault();
-    
-
-    if (!this.piattiForm.value) {
-      return;
-    }
-  
-    console.log(event);
     
     const file = event.target[3].files[0]; // Ottieni il file selezionato
     let filePath = '' + file.name; // percorso Firebase Storage
