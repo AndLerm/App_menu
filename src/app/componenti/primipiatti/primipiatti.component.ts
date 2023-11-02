@@ -59,7 +59,6 @@ export class PrimipiattiComponent {
         this.toastr.error('Piatto eliminato con successo!');
         // Puoi aggiornare la vista o fare altre azioni dopo l'eliminazione
         this.getItem()
-        this.primipiatti = this.menuService.getMenuItems('primipiatti');
       },
       error: (error) => {
         console.error('Errore durante l\'eliminazione dell\'elemento:', error);

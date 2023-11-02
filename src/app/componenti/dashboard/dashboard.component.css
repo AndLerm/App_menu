@@ -17,7 +17,11 @@
     top: 30px;
     display: flex;
     align-items: center;
-    transform: scale(1.5);
+    transform: scale(1.0);
+  }
+
+  .btn:hover{
+    box-shadow: 0 0 10px 2px #6192b0 ;
   }
 
   .ml2 {

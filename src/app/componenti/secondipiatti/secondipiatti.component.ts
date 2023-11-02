@@ -61,7 +61,6 @@ export class SecondipiattiComponent {
         this.toastr.error('Piatto eliminato con successo!');
         // Puoi aggiornare la vista o fare altre azioni dopo l'eliminazione
         this.getItem()
-        this.secondipiatti = this.menuService.getMenuItems('secondipiatti');
       },
       error: (error) => {
         console.error('Errore durante l\'eliminazione dell\'elemento:', error);

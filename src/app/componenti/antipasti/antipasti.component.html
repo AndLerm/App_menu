@@ -7,7 +7,7 @@
         <p (click)="toggleTruncate(antipasto)">{{antipasto.isTruncated ? 'Mostra descrizione' : 'Chiudi descrizione'}}  
           <i [ngClass]="antipasto.isTruncated ? 'fa-solid fa-caret-down' : 'fa-solid fa-caret-up'" ></i>
         </p>     
-    </div>
+      </div>
       <mat-card-subtitle class="mx-3 mt-2 fs-4 text-cursive text-dark">€{{ antipasto.prezzo }}</mat-card-subtitle>
 <!-- Bottone elimina card -->
         <div class="d-flex justify-content-start mt-4 ms-2">
