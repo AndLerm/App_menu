@@ -1,7 +1,7 @@
 <mat-card class="example-card rounded-5 card text-center d-flex flex-column justify-content-between" let i = "index">
     <img class="img-card align-self-center" alt="Photo of a Shiba Inu" *ngIf="item.img" [src]="item.img">
-    <mat-card-title  class="mx-3 mt-1 text-cursive fs-2 fw-bold">{{ item.nome }}</mat-card-title>
-    <mat-card-subtitle class="py-2 px-3 text-cursive fs-4 fw-bold" [ngClass]="{ 'text-truncate' : item.isTruncated}">{{ item.descrizione }}</mat-card-subtitle>
+    <mat-card-title  class="mx-3 mt-1 text-cursive fs-2 fw-bold">{{ primaLetteraMaiuscola(item.nome) }}</mat-card-title>
+    <mat-card-subtitle class="py-2 px-3 text-cursive fs-4 fw-bold" [ngClass]="{ 'text-truncate' : item.isTruncated}">{{ primaLetteraMaiuscola(item.descrizione) }}</mat-card-subtitle>
     <div class="d-flex justify-content-end align-items-center btn-show">
       <p (click)="toggleTruncate(item)">{{item.isTruncated ? 'Mostra descrizione' : 'Chiudi descrizione'}}  
         <i [ngClass]="item.isTruncated ? 'fa-solid fa-caret-down' : 'fa-solid fa-caret-up'" ></i>
