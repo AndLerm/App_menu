@@ -21,10 +21,9 @@ export class AdminPageComponent implements OnInit {
   selectedCategory: string = this.menuItem.categoria;
 
   
-  
 
   constructor(public authService: AuthService , private menuService: MenuService, private firebase:FirebaseService, private router: Router, private toastr: ToastrService , private http : HttpClient, private storage: AngularFireStorage) {}
-  
+    
   ngOnInit(): void {
 
     
@@ -33,8 +32,10 @@ export class AdminPageComponent implements OnInit {
       descrizione : new FormControl(),
       prezzo : new FormControl(),
       categoria : new FormControl(),
-      img : new FormControl(),    
+      img : new FormControl(),
+      
     })
+    
   }
   
   isSidenavOpen = false;  
@@ -69,7 +70,7 @@ export class AdminPageComponent implements OnInit {
           if (this.selectedCategory === 'antipasti')
           {
             this.firebase.insertAntipasto('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/antipasti.json',
-            {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo , img : `${this.menuItem.img}` })
+            {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo , img : `${this.menuItem.img}`, id : this.menuItem.id})
             .subscribe(data => {
               filePath = 'antipasti' + file.name; // percorso Firebase Storage 
               this.toastr.success('Antipasto inserito correttamente');
@@ -81,7 +82,7 @@ export class AdminPageComponent implements OnInit {
           else if (this.selectedCategory === 'primipiatti')
           {
             this.firebase.insertPrimo('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/primipiatti.json', 
-            {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo , img : `${this.menuItem.img}`})
+            {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo , img : `${this.menuItem.img}`, id : this.menuItem.id})
             .subscribe(data => {
               filePath = 'primipiatti' + file.name; // percorso Firebase Storage               
               this.toastr.success('Piatto inserito correttamente');
@@ -92,7 +93,7 @@ export class AdminPageComponent implements OnInit {
           else if (this.selectedCategory === 'secondipiatti')
           {
             this.firebase.insertSecondo('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/secondipiatti.json', 
-            {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo , img : `${this.menuItem.img}` })
+            {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo , img : `${this.menuItem.img}`, id : this.menuItem.id })
             .subscribe(data => {
               filePath = 'secondipiatti' + file.name; // percorso Firebase Storage 
               this.toastr.success('Piatto inserito correttamente');
@@ -103,6 +104,7 @@ export class AdminPageComponent implements OnInit {
         });
       }
     });
+
     
     
     

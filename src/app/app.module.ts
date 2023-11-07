@@ -41,6 +41,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AdminPageComponent } from './componenti/admin-page/admin-page.component';
 import { environment } from 'src/environments/environment';
 import { SecondipiattiComponent } from './componenti/secondipiatti/secondipiatti.component';
+import { CardComponent } from './componenti/card/card.component';
 
 
 
@@ -56,6 +57,7 @@ import { SecondipiattiComponent } from './componenti/secondipiatti/secondipiatti
     LoginComponent,
     AdminPageComponent,
     SecondipiattiComponent,
+    CardComponent,
    
   ],
   imports: [
