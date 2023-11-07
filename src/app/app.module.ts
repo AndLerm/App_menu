@@ -42,6 +42,8 @@ import { AdminPageComponent } from './componenti/admin-page/admin-page.component
 import { environment } from 'src/environments/environment';
 import { SecondipiattiComponent } from './componenti/secondipiatti/secondipiatti.component';
 import { CardComponent } from './componenti/card/card.component';
+import { DessertsComponent } from './componenti/desserts/desserts.component';
+import { BevandeComponent } from './componenti/bevande/bevande.component';
 
 
 
@@ -58,6 +60,8 @@ import { CardComponent } from './componenti/card/card.component';
     AdminPageComponent,
     SecondipiattiComponent,
     CardComponent,
+    DessertsComponent,
+    BevandeComponent,
    
   ],
   imports: [

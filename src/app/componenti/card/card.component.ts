@@ -47,11 +47,11 @@ eliminaCard(item: MenuItem) {
           this.itemIds.splice(index, 1);
         }
         this.cardDeleted.emit(item.id);
+        this.toastr.error('Elemento eliminato');
       },
       (error) => {
         // Gestisci eventuali errori nella chiamata al servizio.
         console.error('Errore', error);
-        // Aggiungi qui la logica per visualizzare un messaggio di errore.
       }
     );
   }

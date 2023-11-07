@@ -37,10 +37,21 @@ export class FirebaseService {
      return this.http.get(url)
    }
 
-  //  deleteData(databaseUrl: string): Observable<any> {
-    // Eseguire una richiesta HTTP di tipo "DELETE" al percorso specificato
-    // return this.http.delete(databaseUrl);
-  // }
+   insertDessert(url: string, body: {}){
+    return this.http.post(url, body)
+   }
+ 
+   getDessert(url:string){
+     return this.http.get(url)
+   }
+
+   insertBevanda(url: string, body: {}){
+    return this.http.post(url, body)
+   }
+ 
+   getBevanda(url:string){
+     return this.http.get(url)
+   }
 
   eliminaCard(databasePath: string, cardId: string): Observable<void> {
     // Utilizza il metodo remove() di AngularFireDatabase per eliminare la card dal database Firebase.

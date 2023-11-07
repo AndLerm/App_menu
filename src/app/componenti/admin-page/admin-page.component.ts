@@ -101,6 +101,28 @@ export class AdminPageComponent implements OnInit {
             })
             
           }
+          else if (this.selectedCategory === 'desserts')
+          {
+            this.firebase.insertDessert('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/desserts.json', 
+            {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo , img : `${this.menuItem.img}`, id : this.menuItem.id })
+            .subscribe(data => {
+              filePath = 'desserts' + file.name; // percorso Firebase Storage 
+              this.toastr.success('Piatto inserito correttamente');
+              this.router.navigate(['benvenuto/desserts']);
+            })
+            
+          }
+          else if (this.selectedCategory === 'bevande')
+          {
+            this.firebase.insertBevanda('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/bevande.json', 
+            {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo , img : `${this.menuItem.img}`, id : this.menuItem.id })
+            .subscribe(data => {
+              filePath = 'bevande' + file.name; // percorso Firebase Storage 
+              this.toastr.success('Bevanda inserita correttamente');
+              this.router.navigate(['benvenuto/bevande']);
+            })
+            
+          }
         });
       }
     });
