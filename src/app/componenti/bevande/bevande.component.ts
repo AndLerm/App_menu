@@ -6,16 +6,19 @@ import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 
+
+
 @Component({
-  selector: 'app-primipiatti',
-  templateUrl: './primipiatti.component.html',
-  styleUrls: ['./primipiatti.component.css']
+  selector: 'app-bevande',
+  templateUrl: './bevande.component.html',
+  styleUrls: ['./bevande.component.css']
 })
-export class PrimipiattiComponent {
-  
-  primipiatti: MenuItem[] = [];
+export class BevandeComponent {
+
+  bevande: MenuItem[] = [];
   isTruncated : boolean = true;
-  cardTypePath: string = 'primipiatti';
+  cardTypePath: string = 'bevande';
+
 
   constructor(private menuService: MenuService, private firebase:FirebaseService, private toastr: ToastrService, private authService: AuthService) {}
 
@@ -31,10 +34,10 @@ export class PrimipiattiComponent {
   }
 
   getItem(){
-    this.primipiatti = this.menuService.getMenuItems('primipiatti');
-    this.firebase.getPrimo('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/primipiatti.json').subscribe((data : any) =>{
+    this.bevande = this.menuService.getMenuItems('bevande');
+    this.firebase.getBevanda('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/bevande.json').subscribe((data : any) =>{
       if (data) {
-        this.primipiatti = Object.keys(data).map((key) => {
+        this.bevande = Object.keys(data).map((key) => {
           data[key].isTruncated = true; //per nascondere la descrizione
           data[key].id = key;
           this.itemIds.push(key);
@@ -42,20 +45,21 @@ export class PrimipiattiComponent {
         });
       } else {
         // Tratta il caso in cui data è null o undefined restituendo un array vuoto.
-        this.primipiatti = [];
+        this.bevande = [];
       }
     }
     )
   }
+  
 
-  toggleTruncate(primo: MenuItem) {
-    primo.isTruncated = !primo.isTruncated;
+  toggleTruncate(bevanda: MenuItem) {
+    bevanda.isTruncated = !bevanda.isTruncated;
   }
 
   onCardDeleted(cardId: string) {
     this.getItem();
   }
+
 }
 
-  
 

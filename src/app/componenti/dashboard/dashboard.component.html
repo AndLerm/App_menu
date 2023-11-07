@@ -5,11 +5,10 @@
     <img style="width: 350px;" src="../../../assets/media/LogoR.png" class="mb-5" alt="logo">
 
     <h1 class="ml2 mb-5">Ristorante SulMare</h1>
-    <button mat-raised-button extended routerLink="benvenuto/start" class="rounded-4 mt-5 px-5 py-4">
+    <button mat-raised-button extended routerLink="benvenuto/start" class="btn rounded-pill mt-5 px-5 py-4">
         <mat-icon>restaurant_menu</mat-icon> Apri il menù     
       </button>
 
-      <div class="buttonLogin">
-       <mat-icon routerLink="login" *ngIf="!isUserLoggedIn()">account_circle</mat-icon>
-      </div>
+       <button mat-raised-button extended class="btn buttonLogin rounded-pill" routerLink="login" *ngIf="!isUserLoggedIn()">Login</button>
+      
 </div>

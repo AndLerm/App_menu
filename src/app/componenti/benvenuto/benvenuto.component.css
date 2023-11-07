@@ -26,10 +26,13 @@
   border: 2px solid #6192b0;
   border-radius: 25px;
   background-color: #6192b0;
-  box-shadow: 0 0 10px 1px #6192b0 ;
-
 }
 
+.buttonList:hover{
+  box-shadow: 0 0 10px 1px #6192b0 ;
+  transform: scale(1.05);
+
+}
 
 .buttonStart{
   font-family: 'Allura', cursive;

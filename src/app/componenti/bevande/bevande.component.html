@@ -1,0 +1,18 @@
+<h2 class="text-center">Le nostre bevande</h2>
+<blockquote class="text-center">“Bevo solo in due occasioni: quando sono solo e quando sono in compagnia.” 
+    <footer>&ndash;Boris Makaresko
+
+    </footer>
+</blockquote>
+
+<div class="d-flex justify-content-evenly align-items-start flex-wrap mt-5">
+    <app-card *ngFor="let bevanda of bevande; let i = index" [itemIds]="itemIds"
+    [item]="bevanda"
+    [isTruncated]="bevanda.isTruncated"
+    [cardTypePath]="cardTypePath"
+    [databasePath]="'/bevande'"
+    (cardDeleted)="onCardDeleted($event)"
+    >
+    </app-card>
+    </div>
+    

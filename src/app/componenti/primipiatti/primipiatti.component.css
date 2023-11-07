@@ -1,8 +1,25 @@
-.example-card {
-    width: 240px;
-    min-height: 300px;
- }
+h2{
+    font-size: 30px;
+    word-spacing: 10px;
+    letter-spacing: 5px;
+    font-family: 'Allura', cursive;
+    font-weight: bold;
+  }
 
- .btn-show{
-    width: 50px;
- }
+  blockquote{
+    font-size: 26px;
+    font-family: 'Allura', cursive;
+    word-spacing: 10px;
+    letter-spacing: 5px;
+    position: relative;
+    
+  }
+
+blockquote footer{
+    font-size: 20px;
+    position: absolute;
+    top: 30px;
+    right: 200px;
+    font-weight: bold;
+
+}

@@ -11,6 +11,8 @@ import { LoginComponent } from './componenti/login/login.component';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { AdminPageComponent } from './componenti/admin-page/admin-page.component';
 import { SecondipiattiComponent } from './componenti/secondipiatti/secondipiatti.component';
+import { DessertsComponent } from './componenti/desserts/desserts.component';
+import { BevandeComponent } from './componenti/bevande/bevande.component';
 const routes: Routes = [
 
   {path: '', component: DashboardComponent},
@@ -24,7 +26,8 @@ const routes: Routes = [
       {path: 'antipasti', component: AntipastiComponent},
       {path: 'primipiatti', component: PrimipiattiComponent},
       {path: 'secondipiatti', component: SecondipiattiComponent},
-
+      {path: 'desserts', component: DessertsComponent},
+      {path: 'bevande', component: BevandeComponent},
 
     ]},
 

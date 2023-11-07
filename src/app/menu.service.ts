@@ -9,6 +9,8 @@ export class MenuService {
     antipasti: [],
     primipiatti: [],
     secondipiatti: [],
+    desserts: [],
+    bevande: [],
   };
 
   getMenuItems(category: string): MenuItem[] {

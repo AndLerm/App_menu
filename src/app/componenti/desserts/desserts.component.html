@@ -1,0 +1,16 @@
+<h2 class="text-center">I nostri desserts</h2>
+<blockquote class="text-center">“La vita è breve e imprevedibile. Mangia prima il dessert!” 
+    <footer>&ndash;Helen Keller
+
+    </footer>
+</blockquote>
+<div class="d-flex justify-content-evenly align-items-start flex-wrap mt-5">
+    <app-card *ngFor="let dessert of desserts; let i = index" [itemIds]="itemIds"
+    [item]="dessert"
+    [isTruncated]="dessert.isTruncated"
+    [cardTypePath]="cardTypePath"
+    [databasePath]="'/desserts'"
+    (cardDeleted)="onCardDeleted($event)"
+    >
+    </app-card>
+</div>

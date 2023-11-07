@@ -6,16 +6,19 @@ import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 
+
+
 @Component({
-  selector: 'app-primipiatti',
-  templateUrl: './primipiatti.component.html',
-  styleUrls: ['./primipiatti.component.css']
+  selector: 'app-desserts',
+  templateUrl: './desserts.component.html',
+  styleUrls: ['./desserts.component.css']
 })
-export class PrimipiattiComponent {
-  
-  primipiatti: MenuItem[] = [];
+export class DessertsComponent {
+
+  desserts: MenuItem[] = [];
   isTruncated : boolean = true;
-  cardTypePath: string = 'primipiatti';
+  cardTypePath: string = 'desserts';
+
 
   constructor(private menuService: MenuService, private firebase:FirebaseService, private toastr: ToastrService, private authService: AuthService) {}
 
@@ -31,10 +34,10 @@ export class PrimipiattiComponent {
   }
 
   getItem(){
-    this.primipiatti = this.menuService.getMenuItems('primipiatti');
-    this.firebase.getPrimo('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/primipiatti.json').subscribe((data : any) =>{
+    this.desserts = this.menuService.getMenuItems('desserts');
+    this.firebase.getDessert('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/desserts.json').subscribe((data : any) =>{
       if (data) {
-        this.primipiatti = Object.keys(data).map((key) => {
+        this.desserts = Object.keys(data).map((key) => {
           data[key].isTruncated = true; //per nascondere la descrizione
           data[key].id = key;
           this.itemIds.push(key);
@@ -42,20 +45,21 @@ export class PrimipiattiComponent {
         });
       } else {
         // Tratta il caso in cui data è null o undefined restituendo un array vuoto.
-        this.primipiatti = [];
+        this.desserts = [];
       }
     }
     )
   }
+  
 
-  toggleTruncate(primo: MenuItem) {
-    primo.isTruncated = !primo.isTruncated;
+  toggleTruncate(dessert: MenuItem) {
+    dessert.isTruncated = !dessert.isTruncated;
   }
 
   onCardDeleted(cardId: string) {
     this.getItem();
   }
+
 }
 
-  
 
