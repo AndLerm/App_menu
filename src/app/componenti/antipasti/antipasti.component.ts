@@ -6,8 +6,6 @@ import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 
-
-
 @Component({
   selector: 'app-antipasti',
   templateUrl: './antipasti.component.html',
