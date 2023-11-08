@@ -17,6 +17,12 @@ h2{
     font-weight: bold;
   }
 
+
+img{
+  width: 100%;
+}
+
+
 h4{
   font-size: 30px;
     word-spacing: 10px;
@@ -24,4 +30,24 @@ h4{
     font-family: 'Allura', cursive;
     font-weight: bold;
 
+}
+
+
+
+  
+@media (max-width: 768px) {
+  img {
+   width: 200px;
+   }
+
+  .order-1{
+    order: 2 !important;
+  }
+  
+  
+  .order-2{
+    order: 1 !important;
+    display: flex;
+    justify-content: center;
+  }
 }

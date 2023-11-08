@@ -60,9 +60,5 @@ export class CardComponent {
     
 
 
-    testo:string;
-    primaLetteraMaiuscola(testo: string): string {
-  return testo.charAt(0).toUpperCase() + testo.slice(1);
-}
-
+  
 }

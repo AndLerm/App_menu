@@ -84,7 +84,7 @@ export class AdminPageComponent implements OnInit {
             this.firebase.insertPrimo('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/primipiatti.json', 
             {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo , img : `${this.menuItem.img}`, id : this.menuItem.id})
             .subscribe(data => {
-              filePath = 'primipiatti' + file.name; // percorso Firebase Storage               
+              filePath = 'primipiatti' + file.name;              
               this.toastr.success('Piatto inserito correttamente');
               this.router.navigate(['benvenuto/primipiatti']);
             })
@@ -95,7 +95,7 @@ export class AdminPageComponent implements OnInit {
             this.firebase.insertSecondo('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/secondipiatti.json', 
             {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo , img : `${this.menuItem.img}`, id : this.menuItem.id })
             .subscribe(data => {
-              filePath = 'secondipiatti' + file.name; // percorso Firebase Storage 
+              filePath = 'secondipiatti' + file.name;
               this.toastr.success('Piatto inserito correttamente');
               this.router.navigate(['benvenuto/secondipiatti']);
             })
@@ -106,7 +106,7 @@ export class AdminPageComponent implements OnInit {
             this.firebase.insertDessert('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/desserts.json', 
             {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo , img : `${this.menuItem.img}`, id : this.menuItem.id })
             .subscribe(data => {
-              filePath = 'desserts' + file.name; // percorso Firebase Storage 
+              filePath = 'desserts' + file.name; 
               this.toastr.success('Piatto inserito correttamente');
               this.router.navigate(['benvenuto/desserts']);
             })
@@ -117,7 +117,7 @@ export class AdminPageComponent implements OnInit {
             this.firebase.insertBevanda('https://ristorante-sulmare-c9184-default-rtdb.asia-southeast1.firebasedatabase.app/bevande.json', 
             {nome:this.piattiForm.value.nome , descrizione : this.piattiForm.value.descrizione , prezzo : this.piattiForm.value.prezzo , img : `${this.menuItem.img}`, id : this.menuItem.id })
             .subscribe(data => {
-              filePath = 'bevande' + file.name; // percorso Firebase Storage 
+              filePath = 'bevande' + file.name; 
               this.toastr.success('Bevanda inserita correttamente');
               this.router.navigate(['benvenuto/bevande']);
             })
@@ -126,14 +126,7 @@ export class AdminPageComponent implements OnInit {
         });
       }
     });
-
-    
-    
-    
-    
   }
-  
-  
 }
 
 
