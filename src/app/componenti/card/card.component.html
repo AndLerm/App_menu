@@ -11,8 +11,10 @@
     <!-- Bottone elimina card -->
     <div class="d-flex justify-content-start mt-4 ms-2">
         <span class="position-absolute top-0 start-100 translate-middle badge" *ngIf="isUserLoggedIn()">
-        <button class="btn" aria-label="Example icon button with a delete icon"  (click)="eliminaCard(item)">
-          <i class="fa-regular fa-trash-can fw-bold"></i>
+       
+
+        <button mat-fab class="btn" aria-label="Example icon button with a delete icon" (click)="eliminaCard(item)">
+          <mat-icon>delete</mat-icon>
         </button>
     </span>
 </div>

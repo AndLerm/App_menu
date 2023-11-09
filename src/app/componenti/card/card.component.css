@@ -19,22 +19,14 @@
   }
   
   .btn{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
     position: absolute;
-    top: 15px;
-    left: -45px; 
-    background-color: white;
-    color: rgb(231, 50, 50);
-    border: 2px solid rgb(231, 50, 50);
-    border-radius: 50%;
+    top: 8px;
+    left: -50px; 
     cursor: pointer;
     opacity: 0;
     transition: opacity 0.5s linear 0s;
     transform: translate(30px, -30px) scale(0.9, 1);
+   background-color: rgb(201, 39, 39);
    }
   
   .card:hover{
