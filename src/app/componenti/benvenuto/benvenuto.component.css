@@ -58,3 +58,9 @@
 
   }
 
+  @media (max-width: 600px) {
+    .buttonStart {
+     width: 200px;
+    }
+    }
+

@@ -39,12 +39,12 @@
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
   }
   
-  @media (width <= 740px) {
+  @media (max-width: 740px) {
     .card {
       margin: 50px 40px;
       padding-left: 50px;
       padding-right: 50px;
-      width: 75%;
+      width: 100;
       text-align: center;
       flex-direction: column;
     }

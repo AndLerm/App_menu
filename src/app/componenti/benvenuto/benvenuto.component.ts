@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, HostListener  } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
@@ -13,7 +13,7 @@ export class BenvenutoComponent {
   isUserLoggedIn() : boolean{
     return this.authService.isLoggedIn; 
   }
-
+  
   @ViewChild('drawer')
   drawer!: MatDrawer;
   isDrawerOpen: boolean = false;
@@ -22,6 +22,20 @@ export class BenvenutoComponent {
   toggleDrawer() {
     this.drawer.toggle();
     this.isDrawerOpen = this.drawer.opened;
+  }
+
+  
+  isMobileView = false;
+  
+  
+  @HostListener('window:resize', ['$event'])
+  ngOnInit(event: Event) {
+    this.checkScreenSize();
+  }
+  
+  checkScreenSize() {
+    this.isMobileView = window.innerWidth < 768; // Imposta la larghezza a 768 px in base alle necessità del tuo design responsivo
+  
   }
 }
 

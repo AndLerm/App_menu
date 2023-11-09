@@ -1,7 +1,7 @@
 <mat-drawer-container class="example-container" autosize>
     
     
-    <mat-drawer #drawer mode="side" class="cstDrawer" [opened]="isDrawerOpen">
+    <mat-drawer #drawer mode="{{ isMobileView ? 'over' : 'side' }}" class="cstDrawer" [opened]="isDrawerOpen">
         <mat-list role="list">
             <mat-list-item class="py-5" role="listitem" routerLink="start" routerLinkActive="active"><p class="menuPara">Benvenuto</p></mat-list-item>
             <mat-list-item class="py-5" role="listitem" routerLink="antipasti" routerLinkActive="active"><p class="menuPara"> Antipasti</p> </mat-list-item>
@@ -10,24 +10,30 @@
             <mat-list-item class="py-5" role="listitem" routerLink="desserts" routerLinkActive="active"><p class="menuPara"> Desserts</p></mat-list-item>
             <mat-list-item class="py-5" role="listitem" routerLink="bevande" routerLinkActive="active"><p class="menuPara"> Bevande</p></mat-list-item>    
         </mat-list>
-
+        
         <mat-list class="buttonList">
             <mat-icon class="mx-3" routerLink="start">arrow_upward</mat-icon>
             <mat-icon class="mx-3" routerLink="">home</mat-icon>
             <mat-icon class="mx-3" routerLink="adminPage" *ngIf="isUserLoggedIn()"><mat-icon>account_circle</mat-icon></mat-icon>
         </mat-list>
-
+        
     </mat-drawer>
     
     
     
     <mat-drawer-content>
+        
+        <router-outlet class="{{ isMobileView ? 'd-flex justify-content-end' : '' }}">            
+            <button *ngIf="isMobileView ; else desktopView" class="buttonStart2" type="button" mat-button (click)="toggleDrawer()">
+                <i class="fa-solid fa-bars fa-2xl" style="color: #000000;"></i>
+                
+            </button>
 
-        <router-outlet>
-            <button class="buttonStart" type="button" mat-button (click)="toggleDrawer()">
-                {{ isDrawerOpen ? 'Chiudi il nostro menù' : 'Apri il nostro menù' }}
-              </button>
-
+              <ng-template #desktopView>
+                <button *ngIf="!isMobileView" class="buttonStart" type="button" mat-button (click)="toggleDrawer()">
+                  {{ isDrawerOpen ? 'Chiudi il menù' : 'Apri il menù' }}
+                </button>
+              </ng-template>
         </router-outlet>
 
     </mat-drawer-content>

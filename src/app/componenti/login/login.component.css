@@ -26,3 +26,15 @@
 .btn{
   background-color: #6192af;
 }
+
+
+@media (max-width: 768px) {
+ .card{
+  width: 300px;
+ }
+
+ .example-form-field {
+  width: 240px;
+  
+}
+}
